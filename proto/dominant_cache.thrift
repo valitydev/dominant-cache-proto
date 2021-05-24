@@ -34,6 +34,10 @@ typedef string ContractTemplateName
 typedef string ContractTemplateDescription
 typedef string TermSetHierarchyRef
 
+typedef string TradeBlocRef
+
+typedef string CountryRef
+
 enum CashRegisterProviderParameterType {
     string_type
     integer_type
@@ -82,6 +86,19 @@ struct ContractTemplate {
     4: required TermSetHierarchyRef terms_id
 }
 
+
+struct TradeBloc {
+    1: required TradeBlocRef ref
+    2: required string name
+    3: optional string description
+}
+
+struct Country {
+    1: required CountryRef ref
+    2: required string name
+    3: set<TradeBlocRef> trade_blocs
+}
+
 service DominantCache {
 
         list<Category> GetCategories ()
@@ -91,5 +108,9 @@ service DominantCache {
         list<CashRegisterProvider> GetCashRegisterProviders ()
 
         list<ContractTemplate> GetContractTemplates ()
+
+        list<TradeBloc> GetTradeBlocs ()
+
+        list<Country> GetCountries ()
 
 }
