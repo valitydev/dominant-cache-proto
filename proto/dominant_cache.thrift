@@ -1,4 +1,4 @@
-namespace java com.rbkmoney.damsel.dominant.cache
+namespace java dev.vality.damsel.dominant.cache
 namespace erlang dominant_cache
 
 typedef string CategoryRef
