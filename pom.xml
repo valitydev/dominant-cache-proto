@@ -33,9 +33,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>damsel</artifactId>
-            <version>1.496-cc2875b</version>
+            <version>1.538-5addc41</version>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
