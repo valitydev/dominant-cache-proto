@@ -6,7 +6,7 @@ on:
 
 jobs:
   exists:
-    uses: ./frontend-exists.yml
+    uses: ./frontend-exists.yml@v1
   check:
     name: Check
     runs-on: ubuntu-latest
