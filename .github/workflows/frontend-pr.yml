@@ -5,10 +5,19 @@ on:
     branches: ['*']
 
 jobs:
+  exists:
+    name: Exists
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check package.json
+        if: test -f package.json
   check:
     name: Check
     runs-on: ubuntu-latest
-    if: ${{ hashFiles(package.json) != '' }}
+    needs: exists
+    if: steps.exists.outputs.exit_code == 0
     steps:
       - name: Checkout
         uses: actions/checkout@v2
