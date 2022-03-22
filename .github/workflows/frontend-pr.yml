@@ -14,14 +14,7 @@ jobs:
     needs: exists
     if: needs.exists.outputs.exists == 'true'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Init NodeJS
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.13.2'
-          cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
+      - uses: valitydev/action-frontend@v0.1/setup
       - name: Init Thrift
         uses: valitydev/action-setup-thrift@v1.0.0
       - name: Install Packages
