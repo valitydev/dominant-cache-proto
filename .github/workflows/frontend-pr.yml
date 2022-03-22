@@ -6,9 +6,9 @@ on:
 
 jobs:
   check:
-    if: hashFiles('package.json') != ''
     name: Check
     runs-on: ubuntu-latest
+    if: ${{ test -f package.json }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
