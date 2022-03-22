@@ -3,7 +3,7 @@ name: 'Frontend: Exists'
 on:
   workflow_call:
     outputs:
-      firstword:
+      exists:
         description: 'Exists'
         value: ${{ jobs.exists.outputs.exists }}
 
