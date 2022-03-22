@@ -5,11 +5,13 @@ on:
     branches: ['*']
 
 jobs:
+  exists:
+    uses: ./frontend-exists.yml
   check:
     name: Check
     runs-on: ubuntu-latest
-    needs: frontend-exists
-    if: needs.frontend-exists.outputs.files_exists == 'true'
+    needs: exists
+    if: needs.exists.outputs.exists == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
