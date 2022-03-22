@@ -11,13 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Check package.json
-        run: test -f package.json
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "package.json"
   check:
     name: Check
     runs-on: ubuntu-latest
     needs: exists
-    if: steps.exists.outputs.exit_code == 0
+    if: jobs.exists.steps.check_files.outputs.files_exists == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
