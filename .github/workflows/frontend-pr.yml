@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Check package.json
-        if: test -f package.json
+        run: test -f package.json
   check:
     name: Check
     runs-on: ubuntu-latest
