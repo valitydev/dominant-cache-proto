@@ -6,7 +6,7 @@ on:
 
 jobs:
   check:
-    if: test -f package.json
+    if: hashFiles('package.json') != ''
     name: Check
     runs-on: ubuntu-latest
     steps:
