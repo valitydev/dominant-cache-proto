@@ -6,6 +6,7 @@ on:
 
 jobs:
   check:
+    if: test -f package.json
     name: Check
     runs-on: ubuntu-latest
     steps:
