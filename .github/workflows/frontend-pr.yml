@@ -6,7 +6,7 @@ on:
 
 jobs:
   exists:
-    uses: ./.github/workflows/frontend-exists.yml@v1
+    uses: ./.github/workflows/frontend-exists.yml
   check:
     name: Check
     runs-on: ubuntu-latest
