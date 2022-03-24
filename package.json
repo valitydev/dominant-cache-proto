@@ -21,6 +21,6 @@
   "main": "./lib/dominant_cache.js",
   "types": "./lib/dominant_cache.d.ts",
   "devDependencies": {
-    "@vality/thrift-codegen": "0.1.1-8097a1b.0"
+    "@vality/thrift-codegen": "file:vality-thrift-codegen-0.1.0.tgz"
   }
 }
