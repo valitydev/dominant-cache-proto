@@ -101,12 +101,14 @@ struct Country {
 struct Provider {
     1: required ProviderRef ref
     2: required string name
+    3: optional string description
 }
 
 struct Terminal {
     1: required TerminalRef ref
     2: required string name
     3: required ProviderRef provider_ref
+    4: optional string description
 }
 
 service DominantCache {
