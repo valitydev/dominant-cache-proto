@@ -34,6 +34,10 @@ typedef string TradeBlocRef
 
 typedef string CountryRef
 
+typedef string ProviderRef
+
+typedef string TerminalRef
+
 enum CashRegisterProviderParameterType {
     string_type
     integer_type
@@ -94,6 +98,19 @@ struct Country {
     3: set<TradeBlocRef> trade_blocs
 }
 
+struct Provider {
+    1: required ProviderRef ref
+    2: required string name
+    3: optional string description
+}
+
+struct Terminal {
+    1: required TerminalRef ref
+    2: required string name
+    3: required ProviderRef provider_ref
+    4: optional string description
+}
+
 service DominantCache {
 
         list<Category> GetCategories ()
@@ -107,5 +124,9 @@ service DominantCache {
         list<TradeBloc> GetTradeBlocs ()
 
         list<Country> GetCountries ()
+
+        list<Provider> GetProviders ()
+
+        list<Terminal> GetTerminals ()
 
 }
