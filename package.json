@@ -2,7 +2,7 @@
   "name": "@vality/dominant-cache-proto",
   "version": "2.0.0",
   "scripts": {
-    "codegen": "thrift-codegen --i ./proto --i ./node_modules/damsel --n dominant_cache"
+    "codegen": "thrift-codegen --i ./proto --i ./node_modules/@vality/domain-proto --n dominant_cache"
   },
   "publishConfig": {
     "access": "public",
