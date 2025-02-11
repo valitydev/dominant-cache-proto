@@ -1,6 +1,9 @@
 namespace java dev.vality.damsel.dominant.cache
 namespace erlang dominant_cache
 
+include "proto/base.thrift"
+include "proto/limiter_config.thrift"
+
 typedef string CategoryRef
 typedef string CategoryName
 typedef string CategoryDescription
@@ -37,6 +40,8 @@ typedef string CountryRef
 typedef string ProviderRef
 
 typedef string TerminalRef
+
+typedef string LimitConfigRef
 
 enum CashRegisterProviderParameterType {
     string_type
@@ -111,6 +116,11 @@ struct Terminal {
     4: optional string description
 }
 
+struct LimitConfigObject {
+    1: required LimitConfigRef ref
+    2: required limiter_config.LimitConfig data
+}
+
 service DominantCache {
 
         list<Category> GetCategories ()
@@ -128,5 +138,7 @@ service DominantCache {
         list<Provider> GetProviders ()
 
         list<Terminal> GetTerminals ()
+
+        list<LimitConfigObject> GetLimits ()
 
 }
