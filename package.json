@@ -2,7 +2,7 @@
   "name": "@vality/dominant-cache-proto",
   "version": "2.0.0",
   "scripts": {
-    "codegen": "thrift-codegen --i ./proto --n dominant_cache"
+    "codegen": "thrift-codegen --i ./proto --i ./node_modules/damsel/proto --n dominant_cache"
   },
   "publishConfig": {
     "access": "public",
@@ -33,6 +33,7 @@
     }
   },
   "devDependencies": {
-    "@vality/thrift-codegen": "2.3.2"
+    "@vality/thrift-codegen": "2.3.2",
+    "@vality/domain-proto": "2.0.1-24932cd.0"
   }
 }
