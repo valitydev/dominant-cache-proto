@@ -7,7 +7,7 @@
     <parent>
         <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>1.0.0</version>
+        <version>2.0.3</version>
     </parent>
 
     <artifactId>dominant-cache-proto</artifactId>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>dev.vality</groupId>
             <artifactId>damsel</artifactId>
-            <version>1.538-5addc41</version>
+            <version>1.648-ad715bd</version>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
@@ -46,6 +46,16 @@
 
     <build>
         <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/proto</directory>
+                <targetPath>${project.build.outputDirectory}/proto</targetPath>
+                <includes>
+                    <include>*.thrift</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <!-- THRIFT -->
             <plugin>
@@ -70,7 +80,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
